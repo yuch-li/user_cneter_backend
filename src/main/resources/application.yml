@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  reactive:
+    session:
+      #设置session失效时间为3天
+      timeout: 259200
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: user-center
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/user_center
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  configuration:
+#    下划线转驼峰
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: flag # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
